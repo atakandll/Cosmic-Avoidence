@@ -21,35 +21,46 @@ public class PlayerControls : MonoBehaviour
 
         StartCoroutine(SetBoundaries());
 
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Touch.fingers[0].isActive) // we need to check if the first finger is active, which means that it touches the screen 
+        if (Touch.activeTouches.Count > 0) // fixing samsung devices bug
         {
-            Touch myTouch = Touch.activeTouches[0];
-
-            Vector3 touchPos = myTouch.screenPosition;
-
-            touchPos = mainCam.ScreenToWorldPoint(touchPos);
-
-            if (Touch.activeTouches[0].phase == TouchPhase.Began) // first touch
+            if (Touch.activeTouches[0].finger.index == 0) // first touch, tek parmakla
             {
-                offset = touchPos - transform.position; // nesnenin dokunulan nokta ile player arasýndaki mesafeyi temsil eder
-            }
-            if (Touch.activeTouches[0].phase == TouchPhase.Moved) // moved the finger on screen
-            {
-                //offset çýkarmak nesnenin sürüklendiði yere daha doðru bir þekilde reaksiyon vermesini saðlar.
-                transform.position = new Vector3(touchPos.x - offset.x, touchPos.y - offset.y, 0);
+                Touch myTouch = Touch.activeTouches[0];
 
-            }
-            if (Touch.activeTouches[0].phase == TouchPhase.Stationary) // touch finger but not moved(hareketsiz)
-            {
-                transform.position = new Vector3(touchPos.x - offset.x, touchPos.y - offset.y, 0);
+                Vector3 touchPos = myTouch.screenPosition;
+#if UNITY_EDITOR
 
+                  if(touchPos.x == Mathf.Infinity) // fixing unity editor bug
+                    return;
+
+
+#endif
+
+                touchPos = mainCam.ScreenToWorldPoint(touchPos);
+
+                if (Touch.activeTouches[0].phase == TouchPhase.Began) // first touch
+                {
+                    offset = touchPos - transform.position; // nesnenin dokunulan nokta ile player arasýndaki mesafeyi temsil eder
+                }
+                if (Touch.activeTouches[0].phase == TouchPhase.Moved) // moved the finger on screen
+                {
+                    //offset çýkarmak nesnenin sürüklendiði yere daha doðru bir þekilde reaksiyon vermesini saðlar.
+                    transform.position = new Vector3(touchPos.x - offset.x, touchPos.y - offset.y, 0);
+
+                }
+                if (Touch.activeTouches[0].phase == TouchPhase.Stationary) // touch finger but not moved(hareketsiz)
+                {
+                    transform.position = new Vector3(touchPos.x - offset.x, touchPos.y - offset.y, 0);
+
+                }
             }
+
             transform.position = new Vector3(Mathf.Clamp(transform.position.x, maxLeft, maxRight), Mathf.Clamp(transform.position.y, maxDown, maxUp), 0);
 
 
