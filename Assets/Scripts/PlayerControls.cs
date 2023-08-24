@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.EnhancedTouch;
 using Touch = UnityEngine.InputSystem.EnhancedTouch.Touch;
 using TouchPhase = UnityEngine.InputSystem.TouchPhase;
@@ -13,8 +14,11 @@ public class PlayerControls : MonoBehaviour
 
     private float maxLeft;
     private float maxRight;
-    private float maxUp;
     private float maxDown;
+    private float maxUp;
+
+    //[SerializeField] private InputActionReference moveActionToUse; // for the joystick(optional)
+    //[SerializeField] private float speed;
     void Start()
     {
         mainCam = Camera.main;
@@ -27,18 +31,27 @@ public class PlayerControls : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Touch.activeTouches.Count > 0) // fixing samsung devices bug
+        //Vector2 moveDÝrection = moveActionToUse.action.ReadValue<Vector2>(); // for the joystick
+
+        //transform.Translate(moveDÝrection * speed * Time.deltaTime);
+
+
+        if (Touch.activeTouches.Count > 0) // fixing samsung devices bug, means multi touch
         {
-            if (Touch.activeTouches[0].finger.index == 0) // first touch, tek parmakla
+            if (Touch.activeTouches[0].finger.index == 0) // that means we use only the finger that touches the screen.
             {
                 Touch myTouch = Touch.activeTouches[0];
+
+                if (myTouch.tapCount == 1) // that means its works according to how many touches in the screen
+                {
+                    Debug.Log("DO something");
+                }
 
                 Vector3 touchPos = myTouch.screenPosition;
 #if UNITY_EDITOR
 
-                  if(touchPos.x == Mathf.Infinity) // fixing unity editor bug
+                if (touchPos.x == Mathf.Infinity) // fixing unity editor bug
                     return;
-
 
 #endif
 
