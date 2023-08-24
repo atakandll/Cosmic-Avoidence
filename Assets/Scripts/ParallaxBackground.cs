@@ -18,7 +18,7 @@ public class ParallaxBackground : MonoBehaviour
     {
         transform.Translate(Vector3.down * parallaxSpeed * Time.deltaTime);
 
-        if (transform.position.y < startPos.y - spriteHeight) // background moved more than one full height of the sprite
+        if (transform.position.y < startPos.y - spriteHeight) // detect when the background has scrolled by more than its own height and then reset its position
         {
             transform.position = startPos;
         }
