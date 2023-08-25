@@ -7,10 +7,20 @@ public class Meteor : Enemy
     [SerializeField] private float minSpeed;
     [SerializeField] private float maxSpeed;
     private float speed;
-    public override void HurtsSequence()
+    [SerializeField] private float rotateSpeed;
+
+    private void Start()
     {
         speed = Random.Range(minSpeed, maxSpeed);
         rb.velocity = Vector3.down * speed;
+    }
+    private void Update()
+    {
+        transform.Rotate(0,0,rotateSpeed*Time.deltaTime);
+    }
+    public override void HurtsSequence()
+    {
+        
     }
     public override void DeathSequence()
     {
@@ -21,5 +31,10 @@ public class Meteor : Enemy
     {
         if(other.CompareTag("Player"))
             Destroy(other.gameObject);
+    }
+    private void OnBecameInvisible() // kamera kadrajýndan çýktýðýnda gameobjeleri siliyor
+    {
+        Destroy(gameObject);  
+        
     }
 }

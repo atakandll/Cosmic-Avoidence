@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1797521628022828476}
   - component: {fileID: 1797521628022828479}
   - component: {fileID: 5130810407609001142}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: MeteorOne
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33,7 +33,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1797521628022828477
 SpriteRenderer:
@@ -140,3 +140,4 @@ MonoBehaviour:
   rb: {fileID: 1797521628022828476}
   minSpeed: 8
   maxSpeed: 15
+  rotateSpeed: 150
