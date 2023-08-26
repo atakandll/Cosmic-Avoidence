@@ -29,8 +29,16 @@ public class Meteor : Enemy
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.CompareTag("Player"))
-            Destroy(other.gameObject);
+        if (other.CompareTag("Player"))
+        {
+            PlayerStats playerStats = other.GetComponent<PlayerStats>();
+
+            playerStats.PlayerTakeDamage(damage);
+
+            Destroy(gameObject);
+
+        }
+            
     }
     private void OnBecameInvisible() // kamera kadrajýndan çýktýðýnda gameobjeleri siliyor
     {

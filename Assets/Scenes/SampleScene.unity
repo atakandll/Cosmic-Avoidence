@@ -346,7 +346,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 8.444445
+  orthographic size: 3
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1136,6 +1136,7 @@ GameObject:
   - component: {fileID: 1210132985}
   - component: {fileID: 1210132984}
   - component: {fileID: 1210132983}
+  - component: {fileID: 1210132986}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -1353,6 +1354,19 @@ MonoBehaviour:
   bullets: {fileID: 4421768677849643338, guid: b84a97dc85fd9bd4692f6ec4734fa1b0, type: 3}
   shootingPoint: {fileID: 362213104}
   shootingInterval: 0.3
+--- !u!114 &1210132986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1210132978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b73b22fa0ef5b949bbcfab498c27929, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 3
 --- !u!1 &1378094449
 GameObject:
   m_ObjectHideFlags: 0

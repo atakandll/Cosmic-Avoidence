@@ -34,6 +34,7 @@ public class MeteorSpawner : MonoBehaviour
             float size = Random.Range(0.9f, 1.1f);
 
             newGameObject.transform.localScale = new Vector3(size, size, 1);
+
             timer = 0;
         }
 
