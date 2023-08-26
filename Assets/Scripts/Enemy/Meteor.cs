@@ -24,6 +24,7 @@ public class Meteor : Enemy
     }
     public override void DeathSequence()
     {
+        Instantiate(explosionPrefab, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
 
@@ -34,6 +35,9 @@ public class Meteor : Enemy
             PlayerStats playerStats = other.GetComponent<PlayerStats>();
 
             playerStats.PlayerTakeDamage(damage);
+
+            Instantiate(explosionPrefab, transform.position, Quaternion.identity); // player a çarpýnca da patlama animasyonu
+
 
             Destroy(gameObject);
 

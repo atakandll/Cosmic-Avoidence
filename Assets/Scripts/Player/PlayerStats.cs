@@ -10,6 +10,8 @@ public class PlayerStats : MonoBehaviour
     private float currentHealth;
 
     [SerializeField] private Image healthFill;
+    [SerializeField] protected GameObject explosionPrefab;
+
 
     private void Start()
     {
@@ -23,6 +25,8 @@ public class PlayerStats : MonoBehaviour
 
         if(currentHealth <= 0)
         {
+            Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+
             Destroy(gameObject);
         }
     }

@@ -139,6 +139,7 @@ MonoBehaviour:
   health: 2
   rb: {fileID: 8949190255281702101}
   damage: 2
+  explosionPrefab: {fileID: 2509092400388164442, guid: 7ae80da12887f9e40ad72ad083c59a66, type: 3}
   minSpeed: 8
   maxSpeed: 15
   rotateSpeed: 150
