@@ -37,6 +37,8 @@ public class PlayerStats : MonoBehaviour
 
         if (currentHealth <= 0)
         {
+            EndGameManager.instance.gameOver = true;
+            EndGameManager.instance.StartResolveSequence();
             Instantiate(explosionPrefab, transform.position, Quaternion.identity);
 
             Destroy(gameObject);

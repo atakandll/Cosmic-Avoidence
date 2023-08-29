@@ -9,7 +9,7 @@ public class PanelController : MonoBehaviour
     [SerializeField] private GameObject loseScreen;
     void Start()
     {
-        
+        EndGameManager.instance.RegisterPanelController(this);
     }
     public void ActiveWinScreen()
     {

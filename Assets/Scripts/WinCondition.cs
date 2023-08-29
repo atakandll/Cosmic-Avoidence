@@ -24,7 +24,8 @@ public class WinCondition : MonoBehaviour
                 spawner[i].SetActive(false);
             }
 
-            
+            EndGameManager.instance.StartResolveSequence();
+            gameObject.SetActive(false); // Sürekli çalýþacaðý için durduruyoruz bi kereden sonra
         }
     }
 }
