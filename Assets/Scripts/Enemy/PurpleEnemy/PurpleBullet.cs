@@ -6,7 +6,9 @@ using UnityEngine;
 public class PurpleBullet : MonoBehaviour
 {
     [SerializeField] private float speed;
+
     private Rigidbody2D rb;
+
     [SerializeField] private float damage;
 
     private void Start()
