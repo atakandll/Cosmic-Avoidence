@@ -9,13 +9,14 @@ public class EndGameManager : MonoBehaviour
     private PanelController panelController;
     private void Awake()
     {
-        if (instance != null && instance != this)
+        if (instance == null)
         {
-            Destroy(this);
+            instance = this;
+            DontDestroyOnLoad(gameObject); // diðer levvellere geçince destroy olmucak
         }
         else
         {
-            instance = this;
+            Destroy(gameObject); // diðer levele geçince olaný silicez
         }
     }
     void Start()
@@ -31,7 +32,7 @@ public class EndGameManager : MonoBehaviour
     {
         yield return new WaitForSeconds(2);
         ResolveGame();
-        
+
     }
     public void ResolveGame()
     {
