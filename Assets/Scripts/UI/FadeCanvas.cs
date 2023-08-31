@@ -48,6 +48,7 @@ public class FadeCanvas : MonoBehaviour
 
         while (canvasGroup.alpha > 0)
         {
+            if (fadeStarted) yield break;
             canvasGroup.alpha -= changeValue;
             yield return new WaitForSeconds(waitTime);
         }
