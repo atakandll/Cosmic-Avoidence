@@ -20,6 +20,7 @@ public class PlayerStats : MonoBehaviour
     {
         currentHealth = maxHealth;
         healthFill.fillAmount = currentHealth / maxHealth;
+        EndGameManager.instance.gameOver = false; // bug fixing, every time we load variables is set to false
     }
     public void PlayerTakeDamage(float _damage)
     {
