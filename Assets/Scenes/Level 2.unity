@@ -2422,7 +2422,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullets: {fileID: 4421768677849643338, guid: b84a97dc85fd9bd4692f6ec4734fa1b0, type: 3}
   shootingPoint: {fileID: 362213104}
-  shootingInterval: 1
+  shootingInterval: 0.3
 --- !u!114 &1210132986
 MonoBehaviour:
   m_ObjectHideFlags: 0
