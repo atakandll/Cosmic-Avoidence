@@ -8,14 +8,14 @@ public class ButtonController : MonoBehaviour
 {
     public void LoadLevelString(string levelName)
     {
-        SceneManager.LoadScene(levelName);
+       FadeCanvas.instance.FaderLoadString(levelName);
     }
     public void LoadLevelInt( int  levelIndex)
     {
-        SceneManager.LoadScene(levelIndex);
+       FadeCanvas.instance.FaderLoadInt(levelIndex);
     }
     public void RestartLevel()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); // restart any level which player is.
+        FadeCanvas.instance.FaderLoadInt(SceneManager.GetActiveScene().buildIndex);
     }
 }
