@@ -300,6 +300,7 @@ MonoBehaviour:
   damage: 1
   explosionPrefab: {fileID: 2509092400388164442, guid: 7ae80da12887f9e40ad72ad083c59a66, type: 3}
   anim: {fileID: 3269055838406611290}
+  scoreValue: 10
   speed: 5
   shootInterval: 1
   leftCanon: {fileID: 3269055838142196580}

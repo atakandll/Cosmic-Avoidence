@@ -10,7 +10,8 @@ public class Enemy : MonoBehaviour
     [SerializeField] protected float damage;
     [SerializeField] protected GameObject explosionPrefab;
 
-    [SerializeField] protected Animator anim;   
+    [SerializeField] protected Animator anim;
+    [SerializeField] protected int scoreValue;
 
 
     public void TakeDamage(float damage)
@@ -20,7 +21,7 @@ public class Enemy : MonoBehaviour
         HurtsSequence();
         
         if(health <= 0)
-        {        
+        { 
             DeathSequence();
         }
     }
@@ -30,6 +31,7 @@ public class Enemy : MonoBehaviour
     }
     public virtual void DeathSequence()
     {
+        EndGameManager.instance.UpdateScore(scoreValue);
 
     }
 }

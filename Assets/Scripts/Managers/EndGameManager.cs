@@ -1,12 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+using UnityEngine.Experimental.GlobalIllumination;
 
 public class EndGameManager : MonoBehaviour
 {
     public static EndGameManager instance;
     public bool gameOver;
     private PanelController panelController;
+    private TextMeshProUGUI scoreTextCompanent;
+
+    private int score;
     private void Awake()
     {
         if (instance == null)
@@ -22,6 +27,11 @@ public class EndGameManager : MonoBehaviour
     void Start()
     {
 
+    }
+    public void UpdateScore(int addScore)
+    {
+        score += addScore;
+        scoreTextCompanent.text = "Score: " + score.ToString();
     }
     public void StartResolveSequence()
     {
@@ -53,10 +63,15 @@ public class EndGameManager : MonoBehaviour
     {
         panelController.ActiveLooseScreen();
     }
-    public void RegisterPanelController(PanelController _panelController)
+    public void RegisterPanelController(PanelController _panelController) // panel kayýt
     {
         panelController = _panelController;
     }
+    public void RegisterScoreText( TextMeshProUGUI scoreText)
+    {
+        scoreTextCompanent = scoreText; // text kayýtý
+    }
+
 
 
 }
