@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.Experimental.GlobalIllumination;
+using UnityEngine.SceneManagement;
 
 public class EndGameManager : MonoBehaviour
 {
@@ -57,17 +58,32 @@ public class EndGameManager : MonoBehaviour
     }
     public void WinGame()
     {
+        ScoreSet();
         panelController.ActiveWinScreen();
     }
     public void LoseGame()
     {
+        ScoreSet();
+
         panelController.ActiveLooseScreen();
+    }
+    public void ScoreSet()
+    {
+        PlayerPrefs.SetInt("Score" + SceneManager.GetActiveScene().name, score); // her levelde farklý key olucak böylelikle
+
+        int highScore = PlayerPrefs.GetInt("HighScore" + SceneManager.GetActiveScene().name, 0);
+
+        if (score > highScore)
+        {
+            PlayerPrefs.SetInt("HighScore" + SceneManager.GetActiveScene().name, score);
+        }
+        score = 0; // resetledik
     }
     public void RegisterPanelController(PanelController _panelController) // panel kayýt
     {
         panelController = _panelController;
     }
-    public void RegisterScoreText( TextMeshProUGUI scoreText)
+    public void RegisterScoreText(TextMeshProUGUI scoreText)
     {
         scoreTextCompanent = scoreText; // text kayýtý
     }
