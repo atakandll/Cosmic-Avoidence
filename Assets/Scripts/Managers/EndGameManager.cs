@@ -73,11 +73,11 @@ public class EndGameManager : MonoBehaviour
 
         int highScore = PlayerPrefs.GetInt("HighScore" + SceneManager.GetActiveScene().name, 0);
 
-        if (score > highScore)
+        if (score > highScore) //Þu anki oyuncu puaný (score), kayýtlý yüksek puandan (highScore) daha büyükse, içindeki kod bloðunu çalýþtýrýrýz.
         {
-            PlayerPrefs.SetInt("HighScore" + SceneManager.GetActiveScene().name, score);
+            PlayerPrefs.SetInt("HighScore" + SceneManager.GetActiveScene().name, score); // highScore Güncelleme
         }
-        score = 0; // resetledik
+        score = 0; // yeni bir oyun baþladýðýnda oyuncu puanýnýn sýfýrdan baþladýðý anlamýna gelir. 
     }
     public void RegisterPanelController(PanelController _panelController) // panel kayýt
     {
