@@ -145,3 +145,4 @@ MonoBehaviour:
   minSpeed: 8
   maxSpeed: 15
   rotateSpeed: 150
+  _playerData: {fileID: 11400000, guid: 7babd26b2920dcc4ca6925fd2b5131ca, type: 2}
