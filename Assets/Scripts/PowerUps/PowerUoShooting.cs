@@ -3,17 +3,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PowerUpShield : MonoBehaviour
+public class PowerUoShooting : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
-            PlayerShieldActivator playerShieldActivator = other.GetComponent<PlayerShieldActivator>();
-            playerShieldActivator.ActiveShield();
+            PlayerShooting playerShooting = other.GetComponent<PlayerShooting>();
+            playerShooting.IncreaseUpgrade(1);
             Destroy(gameObject);
         }
-        
     }
     private void OnBecameInvisible()
     {

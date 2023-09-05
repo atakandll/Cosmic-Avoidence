@@ -13,4 +13,9 @@ public class Heal : MonoBehaviour
       playerStats.AddHealth(healthAmount);
       Destroy(gameObject);
    }
+
+   private void OnBecameInvisible()
+   {
+      Destroy(gameObject);
+   }
 }

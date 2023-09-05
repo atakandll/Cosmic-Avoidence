@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -16,6 +17,12 @@ public class PlayerStats : MonoBehaviour
 
     private bool canPlayAnim = true;
 
+    private PlayerShooting _playerShooting;
+
+    private void Awake()
+    {
+        _playerShooting = GetComponent<PlayerShooting>();
+    }
 
     private void Start()
     {
@@ -38,6 +45,7 @@ public class PlayerStats : MonoBehaviour
             StartCoroutine(AntiSpamAnimation());
 
         }
+        _playerShooting.DecraseUpgrade();
 
 
         if (currentHealth <= 0)
