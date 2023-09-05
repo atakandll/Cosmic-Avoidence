@@ -45,6 +45,17 @@ public class PlayerStats : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    public void AddHealth(int healtAmount)
+    {
+        currentHealth += healtAmount;
+        
+        if (currentHealth > maxHealth)
+            currentHealth = maxHealth;
+        
+        healthFill.fillAmount = currentHealth /maxHealth; // güncelledik.
+
+    }
     private IEnumerator AntiSpamAnimation()
     {
         canPlayAnim = false;

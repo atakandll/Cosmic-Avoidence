@@ -26,11 +26,11 @@ public class Meteor : Enemy
     public override void DeathSequence()
     {
         base.DeathSequence();
-        Instantiate(explosionPrefab, transform.position, transform.rotation);
+        Instantiate(explosionPrefab, transform.position, transform.rotation); 
         
         if (_playerData != null)
         {
-            _playerData.SpawnPowerUp(transform.position);
+            _playerData.SpawnPowerUp(transform.position); // meteor oldukten sonra herhangi ekleyecegimiz gameObject spawnlıyor
         }
         Destroy(gameObject);
     }
