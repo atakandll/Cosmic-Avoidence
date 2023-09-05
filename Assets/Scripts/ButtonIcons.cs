@@ -14,7 +14,7 @@ public class ButtonIcons : MonoBehaviour
 
     private void Awake()
     {
-        int unlockedLevel = PlayerPrefs.GetInt(EndGameManager.instance.levelUnlock, firstLevelBuildIndex);
+        int unlockedLevel = PlayerPrefs.GetInt(EndGameManager.instance.levelUnlock, firstLevelBuildIndex); //kodu, kilidi açılan son levelin PlayerPrefs'ten alınmasını sağlar. Eğer bu değer alınamazsa, default olarak firstLevelBuildIndex değeri kullanılır.
 
         for (int i = 0; i < lvlButton.Length; i++)
         {

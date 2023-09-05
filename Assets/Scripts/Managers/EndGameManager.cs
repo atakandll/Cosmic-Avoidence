@@ -21,11 +21,11 @@ public class EndGameManager : MonoBehaviour
         if (instance == null)
         {
             instance = this;
-            DontDestroyOnLoad(gameObject); // diğer levvellere geçince destroy olmucak
+            DontDestroyOnLoad(gameObject); // diÄŸer levvellere geÃ§ince destroy olmucak
         }
         else
         {
-            Destroy(gameObject); // diğer levele geçince olanı silicez
+            Destroy(gameObject); // diÄŸer levele geÃ§ince olanÄ± silicez
         }
     }
     void Start()
@@ -62,11 +62,12 @@ public class EndGameManager : MonoBehaviour
     public void WinGame()
     {
         ScoreSet();
+
         panelController.ActiveWinScreen();
 
-        int nextLevel = SceneManager.GetActiveScene().buildIndex + 1;
+        int nextLevel = SceneManager.GetActiveScene().buildIndex + 1; // bir sonraki levelin indexini hesapladÄ±k
 
-        if (nextLevel > PlayerPrefs.GetInt(levelUnlock, 0))
+        if (nextLevel > PlayerPrefs.GetInt(levelUnlock, 0)) // next level ÅŸuanki kilitten yÃ¼ksekse
         {
             PlayerPrefs.SetInt(levelUnlock, nextLevel); // save next level
 
@@ -80,23 +81,23 @@ public class EndGameManager : MonoBehaviour
     }
     public void ScoreSet()
     {
-        PlayerPrefs.SetInt("Score" + SceneManager.GetActiveScene().name, score); // her levelde farklı key olucak böylelikle
+        PlayerPrefs.SetInt("Score" + SceneManager.GetActiveScene().name, score); // her levelde farklÄ± key olucak bÃ¶ylelikle
 
         int highScore = PlayerPrefs.GetInt("HighScore" + SceneManager.GetActiveScene().name, 0);
 
-        if (score > highScore) //Şu anki oyuncu puanı (score), kayıtlı yüksek puandan (highScore) daha büyükse, içindeki kod bloğunu çalıştırırız.
+        if (score > highScore) //Åu anki oyuncu puanÄ± (score), kayÄ±tlÄ± yÃ¼ksek puandan (highScore) daha bÃ¼yÃ¼kse, iÃ§indeki kod bloÄŸunu Ã§alÄ±ÅŸtÄ±rÄ±rÄ±z.
         {
-            PlayerPrefs.SetInt("HighScore" + SceneManager.GetActiveScene().name, score); // highScore Güncelleme
+            PlayerPrefs.SetInt("HighScore" + SceneManager.GetActiveScene().name, score); // highScore GÃ¼ncelleme
         }
-        score = 0; // yeni bir oyun başladığında oyuncu puanının sıfırdan başladığı anlamına gelir. 
+        score = 0; // yeni bir oyun baÅŸladÄ±ÄŸÄ±nda oyuncu puanÄ±nÄ±n sÄ±fÄ±rdan baÅŸladÄ±ÄŸÄ± anlamÄ±na gelir. 
     }
-    public void RegisterPanelController(PanelController _panelController) // panel kayıt
+    public void RegisterPanelController(PanelController _panelController) // panel kayÄ±t
     {
         panelController = _panelController;
     }
     public void RegisterScoreText(TextMeshProUGUI scoreText)
     {
-        scoreTextCompanent = scoreText; // text kayıtı
+        scoreTextCompanent = scoreText; // text kayÄ±tÄ±
     }
 
 

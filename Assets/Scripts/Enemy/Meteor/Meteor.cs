@@ -8,6 +8,7 @@ public class Meteor : Enemy
     [SerializeField] private float maxSpeed;
     private float speed;
     [SerializeField] private float rotateSpeed;
+    [SerializeField] private PlayerData _playerData;
 
     private void Start()
     {
@@ -25,7 +26,12 @@ public class Meteor : Enemy
     public override void DeathSequence()
     {
         base.DeathSequence();
-        Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+        Instantiate(explosionPrefab, transform.position, transform.rotation);
+        
+        if (_playerData != null)
+        {
+            _playerData.SpawnPowerUp(transform.position);
+        }
         Destroy(gameObject);
     }
 
@@ -37,7 +43,7 @@ public class Meteor : Enemy
 
             playerStats.PlayerTakeDamage(damage);
 
-            Instantiate(explosionPrefab, transform.position, Quaternion.identity); // player a çarpýnca da patlama animasyonu
+            Instantiate(explosionPrefab, transform.position, Quaternion.identity); // player a ï¿½arpï¿½nca da patlama animasyonu
 
 
             Destroy(gameObject);
@@ -45,7 +51,7 @@ public class Meteor : Enemy
         }
             
     }
-    private void OnBecameInvisible() // kamera kadrajýndan çýktýðýnda gameobjeleri siliyor
+    private void OnBecameInvisible() // kamera kadrajï¿½ndan ï¿½ï¿½ktï¿½ï¿½ï¿½nda gameobjeleri siliyor
     {
         Destroy(gameObject);  
         
