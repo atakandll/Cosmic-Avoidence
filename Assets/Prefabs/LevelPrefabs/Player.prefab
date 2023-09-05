@@ -165,6 +165,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _protection: 0
+  shieldBase:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &4031373391812964520
 GameObject:
   m_ObjectHideFlags: 0

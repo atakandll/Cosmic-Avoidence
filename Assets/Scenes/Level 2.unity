@@ -1639,6 +1639,21 @@ PrefabInstance:
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: abb833924c5262b45881dff3fa5f5079, type: 3}
+--- !u!1 &788619256756842315 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6932105743054976272, guid: abb833924c5262b45881dff3fa5f5079, type: 3}
+  m_PrefabInstance: {fileID: 788619256756842314}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &788619256756842316 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 633752026955865398, guid: abb833924c5262b45881dff3fa5f5079, type: 3}
+  m_PrefabInstance: {fileID: 788619256756842314}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &788619256756842317 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7746696416748677282, guid: abb833924c5262b45881dff3fa5f5079, type: 3}
+  m_PrefabInstance: {fileID: 788619256756842314}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2869782966386162157
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1706,6 +1721,34 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 418469541, guid: e4ff72c461c05dc4da7ef140f6bc8989, type: 3}
+      propertyPath: shieldBase.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 418469541, guid: e4ff72c461c05dc4da7ef140f6bc8989, type: 3}
+      propertyPath: shieldBase.Array.data[0]
+      value: 
+      objectReference: {fileID: 788619256756842317}
+    - target: {fileID: 418469541, guid: e4ff72c461c05dc4da7ef140f6bc8989, type: 3}
+      propertyPath: shieldBase.Array.data[1]
+      value: 
+      objectReference: {fileID: 788619256756842317}
+    - target: {fileID: 418469541, guid: e4ff72c461c05dc4da7ef140f6bc8989, type: 3}
+      propertyPath: shieldBase.Array.data[2]
+      value: 
+      objectReference: {fileID: 788619256756842317}
+    - target: {fileID: 418469541, guid: e4ff72c461c05dc4da7ef140f6bc8989, type: 3}
+      propertyPath: shieldBase.Array.data[3]
+      value: 
+      objectReference: {fileID: 788619256756842317}
+    - target: {fileID: 418469541, guid: e4ff72c461c05dc4da7ef140f6bc8989, type: 3}
+      propertyPath: shieldBase.Array.data[4]
+      value: 
+      objectReference: {fileID: 788619256756842316}
+    - target: {fileID: 418469541, guid: e4ff72c461c05dc4da7ef140f6bc8989, type: 3}
+      propertyPath: shieldBase.Array.data[5]
+      value: 
+      objectReference: {fileID: 788619256756842315}
     - target: {fileID: 4031373392389011379, guid: e4ff72c461c05dc4da7ef140f6bc8989, type: 3}
       propertyPath: m_RootOrder
       value: 2
