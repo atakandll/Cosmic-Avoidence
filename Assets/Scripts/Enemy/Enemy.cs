@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,6 +14,11 @@ public class Enemy : MonoBehaviour
     [SerializeField] protected Animator anim;
     [SerializeField] protected int scoreValue;
 
+
+    private void Awake()
+    {
+        
+    }
 
     public void TakeDamage(float damage)
     {

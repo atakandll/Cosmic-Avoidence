@@ -17,6 +17,7 @@ public enum BossState
         private BossEnterState _bossEnterState;
         private BossFireState _bossFireState;
         private BossSpecialAttackState _bossSpecialAttackState;
+        private BossDeathState _bossDeathState;
 
         #endregion
         
@@ -31,6 +32,7 @@ public enum BossState
             _bossEnterState = GetComponent<BossEnterState>();
             _bossFireState = GetComponent<BossFireState>();
             _bossSpecialAttackState = GetComponent<BossSpecialAttackState>();
+            _bossDeathState = GetComponent<BossDeathState>();
         }
 
         private void Start()
@@ -52,7 +54,10 @@ public enum BossState
                     _bossSpecialAttackState.RunState();
                     break;
                 case BossState.death:
-                    Debug.LogWarning("Do something");
+                    _bossEnterState.StopState();
+                    _bossFireState.StopState();
+                    _bossSpecialAttackState.StopState();
+                    _bossDeathState.RunState();
                     break;
             }
         }
