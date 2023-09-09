@@ -138,3 +138,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 1
   speed: 8
+  rb: {fileID: 5694946327520548843}

@@ -8,10 +8,9 @@ public class MiniBullet : MonoBehaviour
 {
     [SerializeField] private float damage;
     [SerializeField] private float speed;
-    private Rigidbody2D rb;
+    [SerializeField] private Rigidbody2D rb;
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
         rb.velocity = transform.up * speed;
 
     }
@@ -25,8 +24,5 @@ public class MiniBullet : MonoBehaviour
         }
     }
 
-    private void OnBecameInvisible()
-    {
-        Destroy(gameObject);
-    }
+    
 }

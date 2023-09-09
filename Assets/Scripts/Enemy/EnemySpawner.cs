@@ -55,7 +55,7 @@ public class EnemySpawner : MonoBehaviour
         yPos = mainCam.ViewportToWorldPoint(new Vector2(0, 1.1f)).y;
     }
 
-    private void OnDisable()
+    private void OnDisable() // enemySpawners disable olduğu zaman boss gelicek.
     {
         if (winCon.canSpawnBoss == false)
             return;

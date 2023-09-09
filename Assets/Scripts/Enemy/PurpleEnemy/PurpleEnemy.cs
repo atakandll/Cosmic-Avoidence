@@ -25,9 +25,11 @@ public class PurpleEnemy : Enemy
         {
             Instantiate(bulletPrefab, leftCanon.position, Quaternion.identity);
             Instantiate(bulletPrefab, rightCanon.position, Quaternion.identity);
+            
             shootTimer = 0;
         }
     }
+    
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
