@@ -7,6 +7,8 @@ public class WinCondition : MonoBehaviour
     private float timer;
     [SerializeField] private float possibleWinTime;
     [SerializeField] GameObject[] spawner;
+    [SerializeField] private bool hasBoss;
+    public bool canSpawnBoss = false;
     void Start()
     {
 
@@ -21,12 +23,22 @@ public class WinCondition : MonoBehaviour
 
         if (timer >= possibleWinTime)
         {
+            if (hasBoss == false)
+            {
+                EndGameManager.instance.StartResolveSequence();
+
+            }
+            else
+            {
+                canSpawnBoss = true;
+            }
+            
             for (int i = 0; i < spawner.Length; i++)
             {
                 spawner[i].SetActive(false);
             }
 
-            EndGameManager.instance.StartResolveSequence();
+            
             gameObject.SetActive(false); // Sürekli çalýþacaðý için durduruyoruz bi kereden sonra
         }
     }

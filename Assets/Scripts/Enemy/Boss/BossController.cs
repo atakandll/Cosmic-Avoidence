@@ -14,29 +14,19 @@ public enum BossState
     {
         #region States
 
-        private BossEnterState _bossEnterState;
-        private BossFireState _bossFireState;
-        private BossSpecialAttackState _bossSpecialAttackState;
-        private BossDeathState _bossDeathState;
+        [SerializeField] private BossEnterState _bossEnterState;
+        [SerializeField] private BossFireState _bossFireState;
+        [SerializeField] private BossSpecialAttackState _bossSpecialAttackState;
+        [SerializeField] private BossDeathState _bossDeathState;
 
         #endregion
         
-
-        private void Awake()
-        {
-            GetReference();
-        }
-
-        private void GetReference()
-        {
-            _bossEnterState = GetComponent<BossEnterState>();
-            _bossFireState = GetComponent<BossFireState>();
-            _bossSpecialAttackState = GetComponent<BossSpecialAttackState>();
-            _bossDeathState = GetComponent<BossDeathState>();
-        }
+        
+       
 
         private void Start()
         {
+            ChangeState(BossState.enter);
             
         }
 
