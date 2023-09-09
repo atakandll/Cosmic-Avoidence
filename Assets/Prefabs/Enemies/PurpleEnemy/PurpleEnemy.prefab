@@ -100,7 +100,7 @@ Transform:
   - {fileID: 3269055838142196580}
   - {fileID: 3269055838386101321}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &3269055838406611292
 SpriteRenderer:
@@ -305,7 +305,7 @@ MonoBehaviour:
   shootInterval: 1
   leftCanon: {fileID: 3269055838142196580}
   rightCanon: {fileID: 3269055838386101321}
-  bulletPrefab: {fileID: 2213500207426165372, guid: 52000eea85f804e44bb6a9da673fc1c8, type: 3}
+  bulletPrefab: {fileID: 6656218300792641608, guid: 52000eea85f804e44bb6a9da673fc1c8, type: 3}
 --- !u!95 &3269055838406611290
 Animator:
   serializedVersion: 4
