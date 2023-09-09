@@ -12,11 +12,23 @@ public enum BossState
 
     public class BossController : MonoBehaviour
     {
+        #region States
+
         private BossEnterState _bossEnterState;
+        private BossFireState _bossFireState;
+
+        #endregion
+        
 
         private void Awake()
         {
+            GetReference();
+        }
+
+        private void GetReference()
+        {
             _bossEnterState = GetComponent<BossEnterState>();
+            _bossFireState = GetComponent<BossFireState>();
         }
 
         private void Start()
@@ -32,7 +44,7 @@ public enum BossState
                     _bossEnterState.RunState();
                     break;
                 case BossState.fire:
-                    Debug.LogWarning("Do something");
+                    _bossFireState.RunState();
                     break;
                 case BossState.special:
                     Debug.LogWarning("Do something");
