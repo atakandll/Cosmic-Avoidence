@@ -9,7 +9,7 @@ public class PowerUoShooting : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            PlayerShooting playerShooting = other.GetComponent<PlayerShooting>();
+            PlayerShooting playerShooting = other.GetComponent<PlayerShooting>(); //eger other nesnesi "Player" etiketini tasiyorsa, bu nesnenin üzerinde bulunan PlayerShooting bilesenini alıyoruz
             playerShooting.IncreaseUpgrade(1);
             Destroy(gameObject);
         }
