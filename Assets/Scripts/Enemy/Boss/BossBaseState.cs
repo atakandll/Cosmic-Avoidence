@@ -11,9 +11,11 @@ using UnityEngine;
         protected  float maxRight;
         protected  float maxDown;
         protected  float maxUp;
+        protected BossController _bossController;
 
         private void Awake()
         {
+            _bossController = GetComponent<BossController>();
             mainCam = Camera.main;
         }
 

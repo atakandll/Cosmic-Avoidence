@@ -12,6 +12,13 @@ public enum BossState
 
     public class BossController : MonoBehaviour
     {
+        private BossEnterState _bossEnterState;
+
+        private void Awake()
+        {
+            _bossEnterState = GetComponent<BossEnterState>();
+        }
+
         private void Start()
         {
             throw new NotImplementedException();
@@ -22,7 +29,7 @@ public enum BossState
             switch (state)
             {
                 case BossState.enter:
-                    Debug.LogWarning("Do something");
+                    _bossEnterState.RunState();
                     break;
                 case BossState.fire:
                     Debug.LogWarning("Do something");
