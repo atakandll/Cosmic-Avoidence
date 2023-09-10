@@ -3,5 +3,6 @@
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/Assets/Scripts/Player/PlayerControls.cs" charset="windows-1254" />
     <file url="file://$PROJECT_DIR$/Assets/Scripts/Player/PlayerShooting.cs" charset="windows-1254" />
+    <file url="file://$PROJECT_DIR$/Assets/Scripts/WinCondition.cs" charset="windows-1254" />
   </component>
 </project>

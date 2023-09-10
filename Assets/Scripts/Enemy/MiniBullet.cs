@@ -24,5 +24,8 @@ public class MiniBullet : MonoBehaviour
         }
     }
 
-    
+    private void OnBecameInvisible()
+    {
+        Destroy(gameObject);
+    }
 }

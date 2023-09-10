@@ -25,5 +25,8 @@ public class PurpleBullet : MonoBehaviour
             Destroy(gameObject);    
         }
     }
-    
+    private void OnBecameInvisible()
+    {
+        Destroy(gameObject);
+    }
 }
