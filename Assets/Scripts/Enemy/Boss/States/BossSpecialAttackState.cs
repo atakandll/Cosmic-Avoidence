@@ -29,7 +29,7 @@
         {
             while (Vector2.Distance(transform.position, targetPoint) > 0.01f)
             {
-                Vector2.MoveTowards(transform.position, targetPoint, speed * Time.deltaTime);
+                transform.position = Vector2.MoveTowards(transform.position, targetPoint, speed * Time.deltaTime);
                 yield return new WaitForEndOfFrame();
             }
 
