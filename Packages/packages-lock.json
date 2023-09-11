@@ -78,6 +78,15 @@
       },
       "url": "https://packages.unity.com"
     },
+    "com.unity.ads": {
+      "version": "4.3.0",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.ugui": "1.0.0"
+      },
+      "url": "https://packages.unity.com"
+    },
     "com.unity.burst": {
       "version": "1.7.4",
       "depth": 3,
