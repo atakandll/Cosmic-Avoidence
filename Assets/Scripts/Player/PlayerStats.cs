@@ -19,19 +19,35 @@ public class PlayerStats : MonoBehaviour
 
     private PlayerShooting _playerShooting;
 
+    public bool canTakeDamage = true;
+
     private void Awake()
     {
         _playerShooting = GetComponent<PlayerShooting>();
+        EndGameManager.instance.RegisterPlayerStats(this);
+        EndGameManager.instance.possibleWin = false;
     }
 
-    private void Start()
+    private void OnEnable() // reklamlarda playerı true ve false olarak yaptık oyüzden böyle olması daha iyi oldu
     {
         currentHealth = maxHealth;
         healthFill.fillAmount = currentHealth / maxHealth;
-        EndGameManager.instance.gameOver = false; // bug fixing, every time we load variables is set to false
+        EndGameManager.instance.gameOver = false; //bug fixing, every time we load variables is set to false
+        StartCoroutine(DamageProtection());
+    }
+
+    IEnumerator DamageProtection()
+    {
+        canTakeDamage = false;
+        yield return new WaitForSeconds(1.5f);
+        canTakeDamage = true;
+
     }
     public void PlayerTakeDamage(float _damage)
     {
+        if (canTakeDamage == false)
+            return;
+        
         if (_shield._protection)
             return;
         
@@ -54,7 +70,8 @@ public class PlayerStats : MonoBehaviour
             EndGameManager.instance.StartResolveSequence(); // show lose UI
             Instantiate(explosionPrefab, transform.position, Quaternion.identity);
 
-            Destroy(gameObject);
+            //Destroy(gameObject);
+            gameObject.SetActive(false);
         }
     }
 

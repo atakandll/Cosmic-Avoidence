@@ -9,10 +9,15 @@ public class EndGameManager : MonoBehaviour
 {
     public static EndGameManager instance;
     public bool gameOver;
+    public bool possibleWin;
+    
     private PanelController panelController;
     private TextMeshProUGUI scoreTextCompanent;
 
-    private int score;
+    private PlayerStats player;
+    private RewardedAd _rewardedAd;
+
+    public int score;
 
     [HideInInspector]
     public string levelUnlock = "LevelUnlock";
@@ -50,17 +55,28 @@ public class EndGameManager : MonoBehaviour
     }
     public void ResolveGame()
     {
-        if (gameOver == false)
+        //possible win == true : we defeated the boss or the timer has expired
+        //gameover == false : deactive player
+        
+        if (possibleWin ==true && gameOver == false) // we defeated the boss or the timer has expired and game over is false
         {
             WinGame();
         }
-        else
+        else if(possibleWin == false && gameOver == true) // we are not at the end of the level but we are deactive the player
         {
+            AdLoseGame();
+        }
+        else if (possibleWin == true && gameOver == true) // player is deactive at the end of a level
+        {
+            //we lost at the and of a level. Both the player and boss were destroyed
+            // or the timer expired but the player was destroyed by the last meteor/ bullet.
             LoseGame();
         }
     }
     public void WinGame()
     {
+        player.canTakeDamage = false; // win screen geldiğinde hiçbir şey olmucak.
+        
         ScoreSet();
 
         panelController.ActiveWinScreen();
@@ -77,7 +93,23 @@ public class EndGameManager : MonoBehaviour
     {
         ScoreSet();
 
-        panelController.ActiveLooseScreen();
+        panelController.ActiveLoseScreen();
+    }
+
+    public void AdLoseGame()
+    {
+        ScoreSet();
+
+        if (_rewardedAd.adNumber > 0)
+        {
+            _rewardedAd.adNumber -= 1;
+            panelController.ActivateAdLose();
+
+        }
+        else
+        {
+            panelController.ActiveLoseScreen();
+        }
     }
     public void ScoreSet()
     {
@@ -98,6 +130,16 @@ public class EndGameManager : MonoBehaviour
     public void RegisterScoreText(TextMeshProUGUI scoreText)
     {
         scoreTextCompanent = scoreText; // text kayıtı
+    }
+
+    public void RegisterPlayerStats(PlayerStats playerStats)
+    {
+        this.player = playerStats;
+    }
+
+    public void RegisterRewardedAd(RewardedAd rewardedAd)
+    {
+        _rewardedAd = rewardedAd;
     }
 
 
