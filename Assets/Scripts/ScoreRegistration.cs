@@ -5,7 +5,7 @@ using TMPro;
 
 public class ScoreRegistration : MonoBehaviour
 {
-    void Start() // texte atadık bunu kayıtını burdan yaptık
+    void Start() // texte atadÄ±k bunu kayÄ±tÄ±nÄ± burdan yaptÄ±k
     {
         TextMeshProUGUI textForRegistation = GetComponent<TextMeshProUGUI>();
 

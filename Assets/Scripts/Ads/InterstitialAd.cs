@@ -24,7 +24,7 @@ public class InterstitialAd : MonoBehaviour,IUnityAdsLoadListener,IUnityAdsShowL
         if (skipNumbers != 0)
         {
             skipNumbers -= 1;
-            PlayerPrefs.SetInt("Interstitial",timeToSkip);
+            PlayerPrefs.SetInt("Interstitial",skipNumbers);
         }
         else
         {
