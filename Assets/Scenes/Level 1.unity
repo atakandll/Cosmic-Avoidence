@@ -2320,6 +2320,10 @@ PrefabInstance:
       propertyPath: healthFill
       value: 
       objectReference: {fileID: 929493359}
+    - target: {fileID: 4031373392389011389, guid: e4ff72c461c05dc4da7ef140f6bc8989, type: 3}
+      propertyPath: explosionPrefab
+      value: 
+      objectReference: {fileID: 2509092400388164442, guid: 7ae80da12887f9e40ad72ad083c59a66, type: 3}
     - target: {fileID: 4031373392389011390, guid: e4ff72c461c05dc4da7ef140f6bc8989, type: 3}
       propertyPath: bullets
       value: 

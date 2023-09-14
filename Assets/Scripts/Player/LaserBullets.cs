@@ -27,6 +27,8 @@ public class LaserBullets : MonoBehaviour
         if (enemy != null)
         {
             enemy.TakeDamage(damage);
+
+            if (referencePool == null) return;
             
             if(gameObject.activeSelf)
                 referencePool.Release(this); //Returns the instance back to the pool.
@@ -48,6 +50,7 @@ public class LaserBullets : MonoBehaviour
     private void OnBecameInvisible()
     {
         if (gameObject == null) return;
+        
         if(gameObject.activeSelf)
             referencePool.Release(this);
 
