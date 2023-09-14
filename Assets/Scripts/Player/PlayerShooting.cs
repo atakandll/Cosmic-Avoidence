@@ -1,11 +1,15 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Net;
 using UnityEngine;
+using UnityEngine.Pool;
+using UnityEngine.UIElements;
+using Random = UnityEngine.Random;
 
 public class PlayerShooting : MonoBehaviour
 {
-    [SerializeField] private GameObject bullets;
+    [SerializeField] private LaserBullets bullets;
     [SerializeField] private float shootingInterval; // ateþ etme aralýðý
     
     [Header("Basic Attacks")]
@@ -26,9 +30,38 @@ public class PlayerShooting : MonoBehaviour
 
     private int upgradeLevel = 0;
 
+    private ObjectPool<LaserBullets> pool;
+
 
     private float intervalReset;
 
+    private void Awake()
+    {
+        pool = new ObjectPool<LaserBullets>(CreatePoolObj, OnTakeBulletFromPool, OnReturnBulletsFromPool,
+            OnDestroyPoolObj, true,10,30);
+    }
+
+    private void OnDestroyPoolObj(LaserBullets bullets)
+    {
+        Destroy(bullets.gameObject);
+    }
+
+    private LaserBullets CreatePoolObj()
+    {
+        LaserBullets bullets = Instantiate(this.bullets, transform.position, Quaternion.identity);
+        bullets.SetPool(pool);
+        return bullets;
+    }
+
+    private void OnTakeBulletFromPool(LaserBullets bullets)
+    {
+        bullets.gameObject.SetActive(true);
+    }
+
+    private void OnReturnBulletsFromPool(LaserBullets bullets)
+    {
+        bullets.gameObject.SetActive(false);        
+    }
 
 
     private void Start()
@@ -69,35 +102,43 @@ public class PlayerShooting : MonoBehaviour
         switch (upgradeLevel)
         {
             case 0:
-                Instantiate(bullets, shootingPoint.position,Quaternion.identity);
+                pool.Get().transform.position = shootingPoint.position;
+                //Instantiate(bullets, shootingPoint.position,Quaternion.identity);
                 break;
             case 1:
-                Instantiate(bullets, leftCanon.position,Quaternion.identity);
-                Instantiate(bullets,rightCanon.position,Quaternion.identity);
+                pool.Get().transform.position = leftCanon.position;
+                pool.Get().transform.position = rightCanon.position;
                 break;
             case 2:
-                Instantiate(bullets, shootingPoint.position,Quaternion.identity);
-                Instantiate(bullets, leftCanon.position,Quaternion.identity);
-                Instantiate(bullets, rightCanon.position,Quaternion.identity);
+                pool.Get().transform.position = shootingPoint.position;
+                pool.Get().transform.position = leftCanon.position;
+                pool.Get().transform.position = rightCanon.position;
                 break;
             case 3:
-                Instantiate(bullets, shootingPoint.position,Quaternion.identity);
-                Instantiate(bullets, leftCanon.position,Quaternion.identity);
-                Instantiate(bullets, rightCanon.position,Quaternion.identity);
-                Instantiate(bullets, secondLeftCanon.position,Quaternion.identity);
-                Instantiate(bullets, secondRightCanon.position,Quaternion.identity);
+                pool.Get().transform.position = shootingPoint.position;
+                pool.Get().transform.position = leftCanon.position;
+                pool.Get().transform.position = rightCanon.position;
+                pool.Get().transform.position = secondLeftCanon.position;
+                pool.Get().transform.position = secondRightCanon.position;
                 break;
-            
             case 4:
-                Instantiate(bullets, shootingPoint.position,Quaternion.identity);
-                Instantiate(bullets, leftCanon.position,Quaternion.identity);
-                Instantiate(bullets, rightCanon.position,Quaternion.identity);
-                Instantiate(bullets, secondLeftCanon.position,Quaternion.identity);
-                Instantiate(bullets, secondRightCanon.position,Quaternion.identity);
-                Instantiate(bullets, leftRotationCanon.position,leftRotationCanon.rotation);
-                Instantiate(bullets, rightRotationCanon.position,rightRotationCanon.rotation);
-                break;
+                pool.Get().transform.position = shootingPoint.position;
+                pool.Get().transform.position = leftCanon.position;
+                pool.Get().transform.position = rightCanon.position;
+                pool.Get().transform.position = secondLeftCanon.position;
+                pool.Get().transform.position = secondRightCanon.position;
 
+                LaserBullets bullets1 = pool.Get();
+                bullets1.transform.position = leftRotationCanon.position;
+                bullets1.transform.rotation = leftRotationCanon.rotation;
+                bullets1.SetDirectionAndSpeed();
+
+                LaserBullets bullets2 = pool.Get();
+                bullets2.transform.position = rightRotationCanon.position;
+                bullets2.transform.rotation = rightRotationCanon.rotation;
+                bullets2.SetDirectionAndSpeed();
+                
+                break;
             default:
                 break;
 
