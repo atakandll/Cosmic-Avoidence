@@ -59,7 +59,7 @@
 
             }
 
-            int randomState = Random.Range(0, 5);
+            int randomState = Random.Range(0, 3);
 
             if (randomState == 0)
                 _bossController.ChangeState((BossState.fire));

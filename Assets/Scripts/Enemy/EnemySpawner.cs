@@ -57,6 +57,8 @@ public class EnemySpawner : MonoBehaviour
 
     private void OnDisable() // enemySpawners disable olduğu zaman boss gelicek.
     {
+        if (winCon == null) return;
+        
         if (winCon.canSpawnBoss == false)
             return;
         

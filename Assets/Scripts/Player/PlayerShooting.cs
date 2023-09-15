@@ -30,7 +30,7 @@ public class PlayerShooting : MonoBehaviour
 
     private int upgradeLevel = 0;
 
-    private ObjectPool<LaserBullets> pool;
+    private ObjectPool<LaserBullets> pool; // object pool oluþturduk
 
 
     private float intervalReset;
@@ -41,7 +41,7 @@ public class PlayerShooting : MonoBehaviour
             OnDestroyPoolObj, true,10,30);
     }
 
-    private void OnDestroyPoolObj(LaserBullets bullets)
+    private void OnDestroyPoolObj(LaserBullets bullets) // pooldan silme
     {
         Destroy(bullets.gameObject);
     }
@@ -53,12 +53,12 @@ public class PlayerShooting : MonoBehaviour
         return bullets;
     }
 
-    private void OnTakeBulletFromPool(LaserBullets bullets)
+    private void OnTakeBulletFromPool(LaserBullets bullets) // pooldan mermi alma
     {
         bullets.gameObject.SetActive(true);
     }
 
-    private void OnReturnBulletsFromPool(LaserBullets bullets)
+    private void OnReturnBulletsFromPool(LaserBullets bullets) // mermiyi geri poola götürme
     {
         bullets.gameObject.SetActive(false);        
     }

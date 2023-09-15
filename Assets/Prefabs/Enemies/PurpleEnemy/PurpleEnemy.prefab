@@ -297,11 +297,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 3
   rb: {fileID: 3269055838406611293}
-  damage: 1
+  damage: 2
   explosionPrefab: {fileID: 2509092400388164442, guid: 7ae80da12887f9e40ad72ad083c59a66, type: 3}
   anim: {fileID: 3269055838406611290}
   scoreValue: 10
-  speed: 5
+  speed: 7
   shootInterval: 0.5
   leftCanon: {fileID: 3269055838142196580}
   rightCanon: {fileID: 3269055838386101321}

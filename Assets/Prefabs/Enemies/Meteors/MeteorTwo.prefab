@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 8949190255281702103}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 2.22, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -142,7 +142,7 @@ MonoBehaviour:
   explosionPrefab: {fileID: 2509092400388164442, guid: 7ae80da12887f9e40ad72ad083c59a66, type: 3}
   anim: {fileID: 0}
   scoreValue: 5
-  minSpeed: 8
-  maxSpeed: 15
+  minSpeed: 15
+  maxSpeed: 20
   rotateSpeed: 150
   _playerData: {fileID: 11400000, guid: 7babd26b2920dcc4ca6925fd2b5131ca, type: 2}

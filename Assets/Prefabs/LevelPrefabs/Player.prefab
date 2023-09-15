@@ -340,7 +340,7 @@ Transform:
   - {fileID: 6865156927810994335}
   - {fileID: 4300337371296614812}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4031373392389011380
 SpriteRenderer:
@@ -448,7 +448,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 006e874d5f6073e43922557712685195, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullets: {fileID: 4421768677849643338, guid: b84a97dc85fd9bd4692f6ec4734fa1b0, type: 3}
+  bullets: {fileID: 1711057691907358438, guid: b84a97dc85fd9bd4692f6ec4734fa1b0, type: 3}
   shootingInterval: 0.3
   shootingPoint: {fileID: 4031373391812964535}
   leftCanon: {fileID: 3599005871357779881}
@@ -555,11 +555,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b73b22fa0ef5b949bbcfab498c27929, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 3
+  maxHealth: 20
   anim: {fileID: 4031373392389011388}
   healthFill: {fileID: 0}
-  explosionPrefab: {fileID: 4421768677849643338, guid: b84a97dc85fd9bd4692f6ec4734fa1b0, type: 3}
+  explosionPrefab: {fileID: 2509092400388164442, guid: 7ae80da12887f9e40ad72ad083c59a66, type: 3}
   _shield: {fileID: 418469541}
+  canTakeDamage: 1
 --- !u!95 &4031373392389011388
 Animator:
   serializedVersion: 4
