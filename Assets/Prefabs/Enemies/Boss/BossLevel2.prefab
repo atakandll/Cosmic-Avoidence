@@ -140,7 +140,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c91aa214c5dc4614f81606c232c245ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
+  health: 70
   rb: {fileID: 2583605203718565397}
   damage: 5
   explosionPrefab: {fileID: 2624443554299199349, guid: 6b1b05bc694bbb54d923498f50ef5225, type: 3}

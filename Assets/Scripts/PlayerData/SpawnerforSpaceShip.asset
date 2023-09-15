@@ -10,11 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4dff7234c2f033e4aa9fbce2d293bfa4, type: 3}
-  m_Name: Spawner
+  m_Name: SpawnerforSpaceShip
   m_EditorClassIdentifier: 
-  spawnTreshold: 55
+  spawnTreshold: 45
   powerUp:
-  - {fileID: 4806162080600049066, guid: 1a4b2da833989b647993c807f68c10c4, type: 3}
   - {fileID: 5855440628751199772, guid: 112f04b4effee2b4eb9656babe171b75, type: 3}
-  - {fileID: 177715733808834829, guid: 7af573f683933d248b355a41f3e00e93, type: 3}
+  - {fileID: 4806162080600049066, guid: 1a4b2da833989b647993c807f68c10c4, type: 3}
   - {fileID: 905953881191223558, guid: 924ccb14bc3abb244b48e6b7642a6e8d, type: 3}

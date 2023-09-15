@@ -30,7 +30,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8200583628001048785
 MonoBehaviour:
@@ -46,4 +46,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _androidAdUnitId: Interstitial_Android
   _iOsAdUnitId: Interstitial_iOS
-  banner: {fileID: 0}
+  banner: {fileID: 7764663192550162247, guid: 683f3267d2890af4d82e2a94f13308ef, type: 3}
+  timeToSkip: 1

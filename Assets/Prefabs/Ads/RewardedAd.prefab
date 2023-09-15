@@ -30,7 +30,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4793462529027224819
 MonoBehaviour:
@@ -44,7 +44,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d8f6fb8fa732a447ad55851bdb166b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  adNumber: 1
   _androidAdUnitId: Rewarded_Android
   _iOSAdUnitId: Rewarded_iOS
-  player: {fileID: 0}
-  _bannerAd: {fileID: 0}
+  player: {fileID: 4031373392389011381, guid: e4ff72c461c05dc4da7ef140f6bc8989, type: 3}
+  _bannerAd: {fileID: 7764663192550162247, guid: 683f3267d2890af4d82e2a94f13308ef, type: 3}

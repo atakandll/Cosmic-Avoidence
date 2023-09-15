@@ -145,7 +145,7 @@ MonoBehaviour:
   damage: 6
   explosionPrefab: {fileID: 2624443554299199349, guid: 6b1b05bc694bbb54d923498f50ef5225, type: 3}
   anim: {fileID: 3184949150392823114}
-  scoreValue: 100
+  scoreValue: 150
 --- !u!114 &838555890165627353
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -191,8 +191,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb20033da4264b54a5747f395b20f084, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
-  waitTime: 2
+  speed: 2.5
+  waitTime: 1
   specialBullet: {fileID: 1983907771959921503, guid: 33250ae869bb5694fba9389575c3a3f3, type: 3}
   shootingPoint: {fileID: 3154250724500133367}
 --- !u!50 &2583605203718565397

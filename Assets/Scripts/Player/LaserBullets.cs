@@ -49,7 +49,7 @@ public class LaserBullets : MonoBehaviour
 
     private void OnBecameInvisible()
     {
-        if (gameObject == null) return;
+        if (referencePool == null) return;
         
         if(gameObject.activeSelf)
             referencePool.Release(this);

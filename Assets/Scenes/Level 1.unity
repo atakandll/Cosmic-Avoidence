@@ -273,17 +273,6 @@ PrefabInstance:
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 683f3267d2890af4d82e2a94f13308ef, type: 3}
---- !u!114 &288232247 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7764663192550162247, guid: 683f3267d2890af4d82e2a94f13308ef, type: 3}
-  m_PrefabInstance: {fileID: 288232246}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a271507e5d36244cb2109dac3a98309, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &394904017 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4031373392389011381, guid: e4ff72c461c05dc4da7ef140f6bc8989, type: 3}
@@ -481,7 +470,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 8.664653
+  orthographic size: 7.316326
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1074,7 +1063,7 @@ PrefabInstance:
     - target: {fileID: 4793462529027224819, guid: 0f9e831ca27214f4eb596f6d1e920d6a, type: 3}
       propertyPath: _bannerAd
       value: 
-      objectReference: {fileID: 288232247}
+      objectReference: {fileID: 7764663192550162247, guid: 683f3267d2890af4d82e2a94f13308ef, type: 3}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 0f9e831ca27214f4eb596f6d1e920d6a, type: 3}
@@ -1611,7 +1600,7 @@ PrefabInstance:
     - target: {fileID: 8200583628001048785, guid: ab1b8abbd2d941c458765196f5199e1c, type: 3}
       propertyPath: banner
       value: 
-      objectReference: {fileID: 288232247}
+      objectReference: {fileID: 7764663192550162247, guid: 683f3267d2890af4d82e2a94f13308ef, type: 3}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: ab1b8abbd2d941c458765196f5199e1c, type: 3}

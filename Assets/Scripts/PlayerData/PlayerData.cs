@@ -4,7 +4,7 @@ using UnityEngine;
 
 
 [CreateAssetMenu(menuName = "PlayerData/PowerUpSpawner", fileName = "Spawner")]
-public class PlayerData :ScriptableObject
+public class PlayerData : ScriptableObject
 {
    public int spawnTreshold;
    public GameObject[] powerUp;

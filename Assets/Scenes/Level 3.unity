@@ -384,7 +384,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 7.857534
+  orthographic size: 7.316326
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -2059,7 +2059,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2869782965993179933, guid: 0a30125b9e626bb4ca9e9e2419077b48, type: 3}
       propertyPath: spawnnTime
-      value: 1
+      value: 0.7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -2153,11 +2153,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5485545900445857046, guid: b7a2e7a6bd44a3d41815de75ac4253d5, type: 3}
       propertyPath: hasBoss
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5485545900445857046, guid: b7a2e7a6bd44a3d41815de75ac4253d5, type: 3}
+      propertyPath: canSpawnBoss
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5485545900445857046, guid: b7a2e7a6bd44a3d41815de75ac4253d5, type: 3}
       propertyPath: possibleWinTime
-      value: 25
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 5485545900445857046, guid: b7a2e7a6bd44a3d41815de75ac4253d5, type: 3}
       propertyPath: spawner.Array.data[0]
@@ -2237,6 +2241,10 @@ PrefabInstance:
       propertyPath: winCon
       value: 
       objectReference: {fileID: 5485545900289277835}
+    - target: {fileID: 5562696324390336760, guid: d6d620c26f07f434198897f93932edd0, type: 3}
+      propertyPath: bossPrefab
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 5562696324390336761, guid: d6d620c26f07f434198897f93932edd0, type: 3}
       propertyPath: m_Name
       value: EnemySpawner
