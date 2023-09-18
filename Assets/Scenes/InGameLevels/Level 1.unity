@@ -2106,6 +2106,14 @@ PrefabInstance:
       propertyPath: spawnnTime
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2869782965993179933, guid: 0a30125b9e626bb4ca9e9e2419077b48, type: 3}
+      propertyPath: meteors.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2869782965993179933, guid: 0a30125b9e626bb4ca9e9e2419077b48, type: 3}
+      propertyPath: meteors.Array.data[1]
+      value: 
+      objectReference: {fileID: 8949190255281702103, guid: cbc43bdc01412944bb449ad798aaa60a, type: 3}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 0a30125b9e626bb4ca9e9e2419077b48, type: 3}

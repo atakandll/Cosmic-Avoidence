@@ -2043,7 +2043,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2869782965993179933, guid: 0a30125b9e626bb4ca9e9e2419077b48, type: 3}
       propertyPath: spawnnTime
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -2221,6 +2221,10 @@ PrefabInstance:
       propertyPath: winCon
       value: 
       objectReference: {fileID: 5485545900289277835}
+    - target: {fileID: 5562696324390336760, guid: d6d620c26f07f434198897f93932edd0, type: 3}
+      propertyPath: enemySpawnTime
+      value: 0.7
+      objectReference: {fileID: 0}
     - target: {fileID: 5562696324390336760, guid: d6d620c26f07f434198897f93932edd0, type: 3}
       propertyPath: enemies.Array.size
       value: 4

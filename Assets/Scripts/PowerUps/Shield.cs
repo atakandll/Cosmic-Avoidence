@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class Shield : MonoBehaviour
 {
-    private int _hitsToDestroy = 3;
+    private int _hitsToDestroy = 8;
     public bool _protection = false;
 
     [SerializeField] private GameObject[] shieldBase;
