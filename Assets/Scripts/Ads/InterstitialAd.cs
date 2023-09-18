@@ -7,7 +7,7 @@ using UnityEngine.Advertisements;
 public class InterstitialAd : MonoBehaviour,IUnityAdsLoadListener,IUnityAdsShowListener
 {
     [SerializeField] string _androidAdUnitId = "Interstitial_Android";
-    [SerializeField] string _iOsAdUnitId = "Interstitial_iOS";
+    [SerializeField] string _iOSAdUnitId = "Interstitial_iOS";
     [SerializeField] private BannerAd banner;
     string _adUnitId;
     [SerializeField] private int timeToSkip = 1;
@@ -15,9 +15,15 @@ public class InterstitialAd : MonoBehaviour,IUnityAdsLoadListener,IUnityAdsShowL
     void Awake()
     {
         // Get the Ad Unit ID for the current platform:
-        _adUnitId = (Application.platform == RuntimePlatform.IPhonePlayer)
-            ? _iOsAdUnitId
-            : _androidAdUnitId;
+        //_adUnitId = (Application.platform == RuntimePlatform.IPhonePlayer)
+        //  ? _iOsAdUnitId
+        // : _androidAdUnitId;
+        
+#if UNITY_IOS
+        _adUnitId = _iOSAdUnitId;
+#elif  UNITY_ANDROID
+        _adUnitId = _androidAdUnitId;
+#endif
 
         int skipNumbers = PlayerPrefs.GetInt("Interstitial", timeToSkip);
 
@@ -28,15 +34,15 @@ public class InterstitialAd : MonoBehaviour,IUnityAdsLoadListener,IUnityAdsShowL
         }
         else
         {
+           
             LoadAd();
             PlayerPrefs.SetInt("Interstitial",timeToSkip);
         }
         
     }
 
-    private void Start()
-    {
-    }
+    
+
 
     public void LoadAd()
     {
@@ -46,7 +52,8 @@ public class InterstitialAd : MonoBehaviour,IUnityAdsLoadListener,IUnityAdsShowL
 
     public void ShowAd()
     {
-        Advertisement.Show(_adUnitId,this);
+        if(Advertisement.isShowing)
+           Advertisement.Show(_adUnitId,this);
     }
 
     public void OnUnityAdsAdLoaded(string placementId)

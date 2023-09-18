@@ -25,6 +25,7 @@ public class RewardedAd : MonoBehaviour, IUnityAdsLoadListener,IUnityAdsShowList
         EndGameManager.instance.RegisterRewardedAd(this);
     }
     
+    
 
     public void LoadAd()
     {
