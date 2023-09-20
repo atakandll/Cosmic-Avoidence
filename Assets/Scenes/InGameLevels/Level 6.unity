@@ -399,6 +399,10 @@ PrefabInstance:
       propertyPath: bulletPrefab
       value: 
       objectReference: {fileID: 6656218300792641608, guid: 33df45e910afb964d9b057e90b0f2b6f, type: 3}
+    - target: {fileID: 7668291397777337856, guid: 8bfa8e8b07bf352478e5ca5894841a37, type: 3}
+      propertyPath: specialBullet
+      value: 
+      objectReference: {fileID: 1983907771959921503, guid: 3b71b40d42aff7a458da6f605e49289b, type: 3}
     - target: {fileID: 8422095380561247355, guid: 8bfa8e8b07bf352478e5ca5894841a37, type: 3}
       propertyPath: health
       value: 500
@@ -460,7 +464,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 8.797546
+  orthographic size: 8.222222
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -2090,7 +2094,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2869782965993179933, guid: 0a30125b9e626bb4ca9e9e2419077b48, type: 3}
       propertyPath: meteors.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2869782965993179933, guid: 0a30125b9e626bb4ca9e9e2419077b48, type: 3}
       propertyPath: meteors.Array.data[0]
@@ -2099,7 +2103,7 @@ PrefabInstance:
     - target: {fileID: 2869782965993179933, guid: 0a30125b9e626bb4ca9e9e2419077b48, type: 3}
       propertyPath: meteors.Array.data[1]
       value: 
-      objectReference: {fileID: 5855440628751199772, guid: 112f04b4effee2b4eb9656babe171b75, type: 3}
+      objectReference: {fileID: 683679149547298104, guid: a6e9978006277f84faee5ffd5c2a5ca9, type: 3}
     - target: {fileID: 2869782965993179933, guid: 0a30125b9e626bb4ca9e9e2419077b48, type: 3}
       propertyPath: meteors.Array.data[2]
       value: 
@@ -2287,11 +2291,11 @@ PrefabInstance:
       objectReference: {fileID: 663490315341000479, guid: 8bfa8e8b07bf352478e5ca5894841a37, type: 3}
     - target: {fileID: 5562696324390336760, guid: d6d620c26f07f434198897f93932edd0, type: 3}
       propertyPath: enemySpawnTime
-      value: 2
+      value: 1.7
       objectReference: {fileID: 0}
     - target: {fileID: 5562696324390336760, guid: d6d620c26f07f434198897f93932edd0, type: 3}
       propertyPath: enemies.Array.size
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5562696324390336760, guid: d6d620c26f07f434198897f93932edd0, type: 3}
       propertyPath: enemies.Array.data[0]
@@ -2313,6 +2317,10 @@ PrefabInstance:
       propertyPath: enemies.Array.data[4]
       value: 
       objectReference: {fileID: 905953881191223558, guid: 924ccb14bc3abb244b48e6b7642a6e8d, type: 3}
+    - target: {fileID: 5562696324390336760, guid: d6d620c26f07f434198897f93932edd0, type: 3}
+      propertyPath: enemies.Array.data[5]
+      value: 
+      objectReference: {fileID: 3269055838406611298, guid: 7eea55a6ea6dd0e4fb9fb33140aac992, type: 3}
     - target: {fileID: 5562696324390336761, guid: d6d620c26f07f434198897f93932edd0, type: 3}
       propertyPath: m_Name
       value: EnemySpawner
