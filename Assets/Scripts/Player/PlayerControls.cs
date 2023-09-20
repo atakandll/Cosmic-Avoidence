@@ -31,6 +31,7 @@ public class PlayerControls : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+       
         //Vector2 moveDÝrection = moveActionToUse.action.ReadValue<Vector2>(); // for the joystick
 
         //transform.Translate(moveDÝrection * speed * Time.deltaTime);
@@ -54,7 +55,8 @@ public class PlayerControls : MonoBehaviour
                     return;
 
 #endif
-
+                if (mainCam == null) return;
+                
                 touchPos = mainCam.ScreenToWorldPoint(touchPos);
 
                 if (Touch.activeTouches[0].phase == TouchPhase.Began) // first touch

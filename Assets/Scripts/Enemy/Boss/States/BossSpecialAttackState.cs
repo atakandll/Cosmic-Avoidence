@@ -12,6 +12,9 @@
         protected override void Start()
         {
             base.Start();
+            
+            if (mainCam == null) return;
+            
             targetPoint = mainCam.WorldToViewportPoint(new Vector3(.5f, .9f));
         }
 
