@@ -38,6 +38,7 @@
 
 ## Levels
 There are only 6 different levels at the moment and our main boss is in the last level. There is a mini boss in every two levels and the number of enemies and difficulty gradually increases with each level. More levels will be added in the future.
+
 ![levelselection](https://github.com/atakandll/Mobile-game-with-new-Input-system/assets/130579265/ffbd56c3-d9c1-4720-843a-9220171b47d2)
 
 
