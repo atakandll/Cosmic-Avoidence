@@ -1,5 +1,7 @@
 # Cosmic Avoidence
 
+`Gameplay youtube link:` [Cosmic Avoidence](https://youtu.be/FIbwNAVN4mY?si=pcZixyF404SSIYIj)        
+
 ## Game Details 
 - In this game, we complete the levels by escaping from meteors and enemy ships in space with our spaceship. We have a mini boss every 2 levels and a main boss in the last level.
   
